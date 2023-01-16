@@ -29,13 +29,15 @@ internal sealed class YamlConfigurationParser
         var yaml = new YamlStream();
         yaml.Load(reader);
 
-        if (!yaml.Any() ||
-            yaml.Documents[0].RootNode is not YamlMappingNode mapping)
+        if (yaml.Any())
         {
-            throw new FormatException(R.Err_InvalidTopLevelElement);
-        }
+            if (yaml.Documents[0].RootNode is not YamlMappingNode mapping)
+            {
+                throw new FormatException(R.Err_InvalidTopLevelElement);
+            }
 
-        VisitMappingNode(mapping);
+            VisitMappingNode(mapping);
+        }
 
         return _data;
     }
