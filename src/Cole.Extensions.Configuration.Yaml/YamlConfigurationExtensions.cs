@@ -10,13 +10,13 @@ namespace Microsoft.Extensions.Configuration;
 public static class YamlConfigurationExtensions
 {
     public static IConfigurationBuilder AddYamlFile(this IConfigurationBuilder builder, string path)
-        => builder.AddYamlFile(null, path, true, false);
+        => AddYamlFile(builder, null, path, false, false);
 
     public static IConfigurationBuilder AddYamlFile(this IConfigurationBuilder builder, string path, bool optional)
-        => builder.AddYamlFile(null, path, optional, false);
+        => AddYamlFile(builder, null, path, optional, false);
 
     public static IConfigurationBuilder AddYamlFile(this IConfigurationBuilder builder, string path, bool optional, bool reloadOnChange)
-        => builder.AddYamlFile(null, path, optional, reloadOnChange);
+        => AddYamlFile(builder, null, path, optional, reloadOnChange);
 
     public static IConfigurationBuilder AddYamlFile(this IConfigurationBuilder builder, IFileProvider? provider, string path, bool optional, bool reloadOnChange)
     {
@@ -27,7 +27,7 @@ public static class YamlConfigurationExtensions
 
         if (string.IsNullOrEmpty(path))
         {
-            throw new ArgumentException(R.Err_InvalidFilePath);
+            throw new ArgumentException(R.Err_InvalidFilePath, nameof(path));
         }
 
         return builder.AddYamlFile(s =>
