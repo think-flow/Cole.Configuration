@@ -13,10 +13,8 @@ namespace Cole.Extensions.Configuration.Yaml;
 
 internal sealed class YamlConfigurationParser
 {
-    private readonly Dictionary<string, string?> _data = new Dictionary<string, string?>(StringComparer.Ordinal);
-
-    //configuration标准实现，应该是大小写不敏感的。但是yaml格式却又是大小写敏感
-    //private readonly Dictionary<string, string?> _data = new Dictionary<string, string?>(StringComparer.OrdinalIgnoreCase);
+    //the Microsoft.Extensions.Configuration library is case insensitive.
+    private readonly Dictionary<string, string?> _data = new Dictionary<string, string?>(StringComparer.OrdinalIgnoreCase);
 
     private readonly Stack<string> _paths = new Stack<string>();
 
@@ -42,7 +40,7 @@ internal sealed class YamlConfigurationParser
         return _data;
     }
 
-    #region Visiter
+    #region YAML Node Visiter
 
     private void VisitNode(YamlNode node)
     {
@@ -84,7 +82,7 @@ internal sealed class YamlConfigurationParser
 
         _data[key] = GetValue(scalarNode);
 
-        //处理yaml中的null值
+        //Process NULL value
         static string? GetValue(YamlScalarNode yamlValue)
         {
             return yamlValue is {Style: ScalarStyle.Plain, Value: "~" or "null" or "Null" or "NULL"}
