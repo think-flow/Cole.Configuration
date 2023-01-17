@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using Microsoft.Extensions.Configuration;
+using Xunit;
 
 namespace Cole.Extensions.Configuration.Yaml.Test;
 
