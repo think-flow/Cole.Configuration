@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{A07424FC-495D-4A7B-AE3C-FA75C1DAA1BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cole.Extensions.Configuration.Yaml", "..\..\src\Cole.Extensions.Configuration.Yaml\Cole.Extensions.Configuration.Yaml.csproj", "{2A984F35-E2D4-4979-B35A-D853E688F1E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A07424FC-495D-4A7B-AE3C-FA75C1DAA1BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A07424FC-495D-4A7B-AE3C-FA75C1DAA1BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A07424FC-495D-4A7B-AE3C-FA75C1DAA1BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A07424FC-495D-4A7B-AE3C-FA75C1DAA1BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A984F35-E2D4-4979-B35A-D853E688F1E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A984F35-E2D4-4979-B35A-D853E688F1E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A984F35-E2D4-4979-B35A-D853E688F1E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A984F35-E2D4-4979-B35A-D853E688F1E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C4F5D2BB-CAC3-47D1-ACE1-5D5C120B1E66}
+	EndGlobalSection
+EndGlobal
